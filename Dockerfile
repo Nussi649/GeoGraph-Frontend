@@ -1,11 +1,9 @@
-# ================================================
-# | NPM BUILDER - FRONTEND
-# ================================================
-FROM node:18 AS npm_builder
+FROM node:lts-alpine
 
-# Set the working directory
 WORKDIR /app
-COPY package*.json ./
-RUN cd /app
-RUN yarn install
-COPY . .
+
+ADD . .
+
+RUN yarn && yarn build
+EXPOSE 8080
+CMD ["yarn", "preview"]
