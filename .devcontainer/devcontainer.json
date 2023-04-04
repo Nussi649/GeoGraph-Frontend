@@ -1,10 +1,29 @@
 // See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-	"name": "GeoGraph Frontend",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	"forwardPorts": [3000],
+  "name": "GeoGraph Frontend",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "prettier.eslintIntegration": true,
+        "prettier.singleQuote": true,
+        "eslint.enable": true,
+        "eslint.codeActionsOnSave": true,
+        "eslint.options": {
+          "overrideConfigFile": ".eslintrc.json"
+        },
+        "prettier.configPath": ".prettierrc",
+        "project": "/workspace/tsconfig.json"
+      },
+      "extensions": ["streetsidesoftware.code-spell-checker", "rvest.vs-code-prettier-eslint", "dbaeumer.vscode-eslint"]
+    }
+  },
+  "forwardPorts": [3000],
   "remoteUser": "node",
   "postCreateCommand": "npm install"
 }
