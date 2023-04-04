@@ -14,27 +14,22 @@ Coded by www.creative-tim.com
 */
 
 // prop-types is a library for typechecking of props.
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 // @mui material components
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Icon from "@mui/material/Icon";
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Icon from '@mui/material/Icon';
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
+import MDBox from 'components/MDBox';
 
 // Custom styles for the SidenavCollapse
-import {
-  collapseItem,
-  collapseIconBox,
-  collapseIcon,
-  collapseText,
-} from "examples/Sidenav/styles/sidenavCollapse";
+import { collapseItem, collapseIconBox, collapseIcon, collapseText } from 'examples/Sidenav/styles/sidenavCollapse';
 
 // Material Dashboard 2 React context
-import { useMaterialUIController } from "context";
+import { useMaterialUIController } from 'context';
 
 function SidenavCollapse({ icon, name, active, ...rest }) {
   const [controller] = useMaterialUIController();
@@ -54,16 +49,8 @@ function SidenavCollapse({ icon, name, active, ...rest }) {
           })
         }
       >
-        <ListItemIcon
-          sx={(theme) =>
-            collapseIconBox(theme, { transparentSidenav, whiteSidenav, darkMode, active })
-          }
-        >
-          {typeof icon === "string" ? (
-            <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon>
-          ) : (
-            icon
-          )}
+        <ListItemIcon sx={(theme) => collapseIconBox(theme, { transparentSidenav, whiteSidenav, darkMode, active })}>
+          {typeof icon === 'string' ? <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon> : icon}
         </ListItemIcon>
 
         <ListItemText
