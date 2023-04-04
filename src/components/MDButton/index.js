@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 /**
 =========================================================
 * Material Dashboard 2 PRO React - v1.0.0

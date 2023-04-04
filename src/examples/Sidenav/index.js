@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 /**
 =========================================================
 * Material Dashboard 2 React - v2.1.0
@@ -42,7 +43,7 @@ import sidenavLogoLabel from 'examples/Sidenav/styles/sidenav';
 // Material Dashboard 2 React context
 import { useMaterialUIController, setMiniSidenav, setTransparentSidenav, setWhiteSidenav } from 'context';
 
-function Sidenav({ color, brand, brandName, routes, ...rest }) {
+function Sidenav({ brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
   const location = useLocation();
