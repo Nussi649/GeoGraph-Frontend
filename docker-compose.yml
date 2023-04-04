@@ -12,4 +12,4 @@ services:
     environment:
       - NODE_ENV=development
 
-    command: "yarn dev"
+    command: "npm run start"

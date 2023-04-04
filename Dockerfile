@@ -1,9 +1,6 @@
-FROM node:lts-alpine
-
+FROM node:alpine
 WORKDIR /app
-
-ADD . .
-
-RUN yarn && yarn build
-EXPOSE 8080
-CMD ["yarn", "preview"]
+COPY package.json ./
+COPY package-lock.json ./
+COPY ./ ./
+RUN npm i
