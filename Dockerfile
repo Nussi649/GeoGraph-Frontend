@@ -1,11 +1,6 @@
-# ================================================
-# | NPM BUILDER - FRONTEND
-# ================================================
-FROM node:18 AS npm_builder
-
-# Set the working directory
+FROM node:alpine
 WORKDIR /app
-COPY package*.json ./
-RUN cd /app
-RUN yarn install
-COPY . .
+COPY package.json ./
+COPY package-lock.json ./
+COPY ./ ./
+RUN npm i
